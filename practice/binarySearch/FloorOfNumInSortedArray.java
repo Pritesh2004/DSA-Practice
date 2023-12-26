@@ -1,28 +1,25 @@
-package practice;
+package practice.binarySearch;
 
-public class CeilingOfNumInSortedArray {
+public class FloorOfNumInSortedArray {
 
     public static void main(String[] args) {
 
-        int[] arr = {1,4,11,14,16,24};
-        int target = 43;
-        int ans = ceilingOfNum(arr, target);
+        int[] arr = {1,5,6,14,16,24};
+        int target = 15;
+        int ans = floorOfNum(arr, target);
 
-        System.out.println("Ceiling element of target element " +target+" is at indexed = "+ans);
-
-
-
+        System.out.println("floor element is at indexed = "+ans);
     }
 
-    //ceiling of target element => smallest no >= target
-    static int ceilingOfNum(int[] arr, int target){
+    //floor of target element => greatest no <= target
+    static int floorOfNum(int[] arr, int target){
 
         int start=0;
         int end=arr.length -1 ;
 
         boolean isAscending = arr[start] < arr[end];
 
-        if(target > arr[end]){
+        if(target < arr[0]){
             return -1;
         }
 
@@ -61,7 +58,7 @@ public class CeilingOfNumInSortedArray {
             }
 
         }
-        return  start;
+        return  end;
 
     }
 }
